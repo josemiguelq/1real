@@ -5,6 +5,13 @@
     "author": "Charles Viegas <charles.viegas@codate.com.br>",
     "private": false,
     "main": "main.mjs",
+    "license": "UNLICENSED",
+    "keywords": [
+        "microservice architecture",
+        "authentication",
+        "security",
+        "JWT"
+    ],
     "scripts": {
         "start": "node -r esm main.mjs",
         "pretest": "mongodb-runner start",
