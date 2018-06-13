@@ -1,7 +1,7 @@
 import request from 'supertest'
 import mongoose from 'mongoose'
 import serverPromise from '../main.mjs'
-import {utils} from 'faciles-commons'
+import {utils} from '@codate/commons'
 
 describe('UserRouter', () => {
     let server = null
