@@ -12,7 +12,7 @@ WORKDIR /app
 
 RUN npm install \
     && cp /wait-for/wait-for . \
-    && apt-get remove git \
+    && apt-get remove -y git \
     && rm -rf /wait-for
 
 ENV HOST=0.0.0.0 \
