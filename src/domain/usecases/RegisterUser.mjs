@@ -14,6 +14,7 @@ export default class RegisterUser {
             await this.checkUserExist(userData)
             userData.password = await Encryption.hash(userData.password)
             const email = EmailTemplate.createEmailForRegisterUser(userData)
+            console.log(email);
             await this.emailRepository.send(email)
             this.userController.sendSuccessResponse({success: true})
         } catch (err) {

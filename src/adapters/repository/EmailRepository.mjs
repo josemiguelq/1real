@@ -4,7 +4,10 @@ class EmailRepository {
     async send({from, to, subject, html, text, password}) {
         return new Promise((resolve, reject) => {
             let transporter = this.createTransport(from, password)
-            transporter.sendMail(arguments, (error, info) => {
+            const email = arguments[0]
+            delete email.password
+            console.log('arguments', email)
+            transporter.sendMail(email, (error, info) => {
                 if (error) return reject(error)
                 resolve(info)
             })

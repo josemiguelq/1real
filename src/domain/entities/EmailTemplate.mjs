@@ -1,7 +1,7 @@
 const FROM = 'noreplyfaciles@gmail.com'
 const PASSWORD = 'faciles@123'
 const PRODUCT_NAME = 'Meu Prontuário'
-const PRODUCT_DOMAIN = 'https://www.meuprontuario.com'
+const PRODUCT_DOMAIN = 'http://localhost:8082'
 
 export default class EmailTemplate {
     static createEmailForRegisterUser(userData) {
@@ -9,7 +9,7 @@ export default class EmailTemplate {
         const html = `<div>
                           <p>Olá ${userData.email}</p>
                           <p>Bem vindo ao ${PRODUCT_NAME}! Para podermos confirmar o seu endereço de email, clique no link abaixo:<br>
-                            <a href="${PRODUCT_DOMAIN}/auth/confirm/${userData.email}/${userData.password}" target="_blank">${PRODUCT_DOMAIN}/auth/confirm/${userData.email}/${userData.password}</a>
+                            <a href="${PRODUCT_DOMAIN}/api/auth/confirm/${userData.email}/${userData.password}" target="_blank">${PRODUCT_DOMAIN}/api/auth/confirm/${userData.email}/${userData.password}</a>
                           </p>
                           <p>Obrigado por se juntar a esta comunidade.</p>
                       </div>`
