@@ -18,8 +18,8 @@
         "test": "mocha -r esm -r chai/register-expect test/**/*.mjs --exit",
         "posttest": "mongodb-runner stop",
         "quality": "eslint ./src/**/*.mjs",
-        "build-image": "docker build -t codate/auth:$npm_package_version .",
-        "publish-image": "docker push codate/auth:$npm_package_version"
+        "build-image": "docker build -t codate/auth:latest .",
+        "publish-image": "docker push codate/auth:latest"
     },
     "repository": {
         "type": "git",
