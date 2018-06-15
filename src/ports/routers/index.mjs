@@ -45,6 +45,7 @@ function getRouter() {
     router.post('/auth/login', (req, res, next) => login(req, res, next))
     router.put('/auth/password', (req, res, next) => update(req, res, next))
     router.get('/auth/confirm/:email/:password', (req, res, next) => confirm(req, res, next))
+    return router
 }
 
 export default getRouter
