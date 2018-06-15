@@ -1,6 +1,6 @@
 import Encryption from '../entities/Encryption.mjs'
 
-export default class Login {
+export default class UpdatePassword {
     constructor(userController, userRepository) {
         this.userController = userController
         this.userRepository = userRepository

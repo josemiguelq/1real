@@ -6,4 +6,4 @@ const config = {
     port: process.env.PORT || 8082
 }
 
-export default runner(config, routers)
+export default runner(config, routers())

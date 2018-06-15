@@ -1,6 +1,4 @@
-import Encryption from '../entities/Encryption.mjs'
-
-export default class CreateUser {
+export default class CheckIsExist {
     constructor(userController, userRepository) {
         this.userController = userController
         this.userRepository = userRepository
@@ -9,9 +7,12 @@ export default class CreateUser {
     async execute() {
         try {
             const userData = this.userController.getData()
-            userData.password = await Encryption.hash(userData.password)
-            const createdUser = await this.userRepository.save(userData)
-            this.userController.sendSuccessResponse(createdUser)
+            const matchedUser = await this.userRepository.findByEmail(userData.email)
+            if (matchedUser) {
+                this.userController.sendSuccessResponse({exist: true})
+            } else {
+                this.userController.sendSuccessResponse({exist: false})
+            }
         } catch (err) {
             this.userController.sendErrorResponse(err)
         }

@@ -6,11 +6,22 @@ export default class UserController {
     }
 
     getData() {
-        return this.req.body
+        if (this.hasRequestBody()) {
+            return this.req.body
+        }
+        return this.req.params
+    }
+
+    hasRequestBody() {
+        return this.req.method === 'POST' || this.req.method === 'PUT'
     }
 
     sendSuccessResponse(createdUser) {
         this.res.json(createdUser)
+    }
+
+    sendRootUrl() {
+        this.res.redirect('/')
     }
 
     sendErrorResponse(err) {

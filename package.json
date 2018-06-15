@@ -26,10 +26,11 @@
         "url": "git@github.com:codate/auth.git"
     },
     "dependencies": {
+        "@codate/commons": "^1.0.0",
         "bcrypt": "^2.0.1",
         "esm": "^3.0.49",
-        "@codate/commons": "^1.0.0",
-        "jsonwebtoken": "^8.2.2"
+        "jsonwebtoken": "^8.2.2",
+        "nodemailer": "^4.6.7"
     },
     "devDependencies": {
         "chai": "^4.1.2",
