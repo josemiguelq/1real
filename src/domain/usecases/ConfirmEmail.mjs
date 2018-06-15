@@ -9,9 +9,9 @@ export default class ConfirmEmail {
             const userData = this.userController.getData()
             await this.checkUserExist(userData)
             await this.userRepository.save(userData)
-            this.userController.sendRootUrl()
+            this.userController.sendHome()
         } catch (err) {
-            this.userController.sendErrorResponse(err)
+            this.userController.sendError(err)
         }
     }
 

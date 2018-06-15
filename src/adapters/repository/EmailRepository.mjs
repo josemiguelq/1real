@@ -6,7 +6,6 @@ class EmailRepository {
             let transporter = this.createTransport(from, password)
             const email = arguments[0]
             delete email.password
-            console.log('arguments', email)
             transporter.sendMail(email, (error, info) => {
                 if (error) return reject(error)
                 resolve(info)

@@ -16,19 +16,19 @@ export default class UserController {
         return this.req.method === 'POST' || this.req.method === 'PUT'
     }
 
-    sendSuccessResponse(createdUser) {
+    sendSuccess(createdUser) {
         this.res.json(createdUser)
     }
 
-    sendRootUrl() {
+    sendHome() {
         this.res.redirect('/')
     }
 
-    sendErrorResponse(err) {
+    sendError(err) {
         this.next(err)
     }
 
-    sendUnauthorizedResponse() {
+    sendUnauthorized() {
         this.res.sendStatus(401)
     }
 }

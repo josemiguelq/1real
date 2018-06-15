@@ -9,12 +9,12 @@ export default class CheckIsExist {
             const userData = this.userController.getData()
             const matchedUser = await this.userRepository.findByEmail(userData.email)
             if (matchedUser) {
-                this.userController.sendSuccessResponse({exist: true})
+                this.userController.sendSuccess({exist: true})
             } else {
-                this.userController.sendSuccessResponse({exist: false})
+                this.userController.sendSuccess({exist: false})
             }
         } catch (err) {
-            this.userController.sendErrorResponse(err)
+            this.userController.sendError(err)
         }
     }
 }

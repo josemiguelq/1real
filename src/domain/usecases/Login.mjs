@@ -16,9 +16,9 @@ export default class Login {
                 throw new Error('Wrong password')
             }
             const token = Token.create(userData)
-            this.userController.sendSuccessResponse({token})
+            this.userController.sendSuccess({token})
         } catch (err) {
-            this.userController.sendUnauthorizedResponse()
+            this.userController.sendUnauthorized()
         }
     }
 }

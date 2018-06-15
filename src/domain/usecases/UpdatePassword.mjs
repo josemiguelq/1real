@@ -15,9 +15,9 @@ export default class UpdatePassword {
             }
             matchedUser.password = await Encryption.hash(userData.password)
             const updatedUser = await this.userRepository.save(matchedUser)
-            this.userController.sendSuccessResponse(updatedUser)
+            this.userController.sendSuccess(updatedUser)
         } catch (err) {
-            this.userController.sendErrorResponse(err)
+            this.userController.sendError(err)
         }
     }
 }
