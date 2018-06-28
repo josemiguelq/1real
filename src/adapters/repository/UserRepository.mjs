@@ -3,7 +3,7 @@ import {User} from '../model/User.mjs'
 class UserRepository {
     async save(userData) {
         const user = new User(userData)
-        return user.save(userData)
+        return user.save()
     }
 
     async findByEmail(email) {

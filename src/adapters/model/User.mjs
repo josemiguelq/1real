@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const UserSchema = new mongoose.Schema({
     email: {type: String, required: true, unique: true},
-    password: {type: String, required: false},
+    password: {type: String, required: false, select: false},
     createdAt: {type: Date, default: Date.now},
     updatedAt: {type: Date, default: Date.now}
 })
