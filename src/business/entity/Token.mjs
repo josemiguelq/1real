@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-import environment from '../../common/environment.mjs'
+import environment from 'src/common/environment.mjs'
 
 const secret = 'CODATE_SECRET'
 const algorithm = 'HS256'

@@ -1,4 +1,4 @@
-import environment from '../../common/environment.mjs'
+import environment from 'src/common/environment.mjs'
 
 export default class EmailTemplate {
     static createEmailForRegisterUser(userData) {

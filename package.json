@@ -19,7 +19,8 @@
         "posttest": "mongodb-runner stop",
         "quality": "eslint ./src/**/*.mjs",
         "build-image": "docker build -t codate/auth:latest .",
-        "publish-image": "docker push codate/auth:latest"
+        "publish-image": "docker push codate/auth:latest",
+        "postinstall": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'dir')});\""
     },
     "repository": {
         "type": "git",

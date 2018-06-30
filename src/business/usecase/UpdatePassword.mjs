@@ -1,5 +1,5 @@
-import Encryption from '../entity/Encryption.mjs'
-import userRepository from '../../repository/UserRepository'
+import Encryption from 'src/business/entity/Encryption.mjs'
+import userRepository from 'src/repository/UserRepository'
 
 export default class UpdatePassword {
     async execute(userData, responder) {

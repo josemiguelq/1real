@@ -1,7 +1,7 @@
-import Encryption from '../entity/Encryption.mjs'
-import EmailTemplate from '../entity/EmailTemplate'
-import userRepository from '../../repository/UserRepository'
-import emailRepository from '../../repository/EmailRepository'
+import Encryption from 'src/business/entity/Encryption.mjs'
+import EmailTemplate from 'src/business/entity/EmailTemplate'
+import userRepository from 'src/repository/UserRepository'
+import emailRepository from 'src/repository/EmailRepository'
 
 export default class RegisterUser {
     async execute(userData, responder) {

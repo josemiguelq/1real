@@ -1,12 +1,12 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import helmet from 'helmet'
-import exists from './router/exists.mjs'
-import register from './router/register.mjs'
-import confirm from './router/confirm.mjs'
-import login from './router/login.mjs'
-import updatePassword from './router/updatePassword.mjs'
-import errorHandler from './common/errorHandler.mjs'
+import exists from 'src/router/exists.mjs'
+import register from 'src/router/register.mjs'
+import confirm from 'src/router/confirm.mjs'
+import login from 'src/router/login.mjs'
+import updatePassword from 'src/router/updatePassword.mjs'
+import errorHandler from 'src/common/errorHandler.mjs'
 
 const app = express()
 app.use(bodyParser.urlencoded({extended: false}))

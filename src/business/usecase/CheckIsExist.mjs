@@ -1,4 +1,4 @@
-import userRepository from '../../repository/UserRepository'
+import userRepository from 'src/repository/UserRepository'
 
 export default class CheckIsExist {
     async execute(userData, responder) {

@@ -1,6 +1,6 @@
 import express from 'express'
-import Responder from '../common/Responder.mjs'
-import RegisterUser from '../business/usecase/RegisterUser.mjs'
+import Responder from 'src/common/Responder.mjs'
+import RegisterUser from 'src/business/usecase/RegisterUser.mjs'
 
 const router = express.Router()
 router.post('/auth/register', (req, res, next) => {

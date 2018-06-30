@@ -1,6 +1,6 @@
 import express from 'express'
-import Responder from '../common/Responder.mjs'
-import Login from '../business/usecase/Login.mjs'
+import Responder from 'src/common/Responder.mjs'
+import Login from 'src/business/usecase/Login.mjs'
 
 const router = express.Router()
 router.post('/auth/login', (req, res, next) => {

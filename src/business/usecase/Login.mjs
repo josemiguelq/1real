@@ -1,6 +1,6 @@
-import Encryption from '../entity/Encryption.mjs'
-import Token from '../entity/Token.mjs'
-import userRepository from '../../repository/UserRepository'
+import Encryption from 'src/business/entity/Encryption.mjs'
+import Token from 'src/business/entity/Token.mjs'
+import userRepository from 'src/repository/UserRepository'
 
 export default class Login {
     async execute(userData, responder) {

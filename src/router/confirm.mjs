@@ -1,6 +1,6 @@
 import express from 'express'
-import Responder from '../common/Responder.mjs'
-import ConfirmEmail from '../business/usecase/ConfirmEmail.mjs'
+import Responder from 'src/common/Responder.mjs'
+import ConfirmEmail from 'src/business/usecase/ConfirmEmail.mjs'
 
 const router = express.Router()
 router.get('/auth/confirm/:email/:password', (req, res, next) => {

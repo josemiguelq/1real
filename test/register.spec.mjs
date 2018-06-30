@@ -8,7 +8,7 @@ describe('Register', () => {
     before((done) => {
         const server = new Server(app, environment)
         server.start()
-            .then(startedServer => {
+            .then(() => {
                 logger.info('Server started')
                 done()
             })

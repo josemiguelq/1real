@@ -1,4 +1,4 @@
-import userRepository from '../../repository/UserRepository'
+import userRepository from 'src/repository/UserRepository'
 
 export default class ConfirmEmail {
     async execute(userData, responder) {

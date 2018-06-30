@@ -11,5 +11,5 @@ export default (err, req, res) => {
         status = 400
         break
     }
-    return res.status(status).json(payload)
+    return res.sendStatus(status, payload)
 }
