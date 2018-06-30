@@ -1,9 +1,9 @@
-import {runner} from '@codate/commons'
-import routers from './src/ports/routers'
+import app from './src/index.mjs'
+import Server from './src/commons/Server.mjs'
+import environment from './src/commons/environment.mjs'
+import logger from './src/commons/logger.mjs'
 
-const config = {
-    url: process.env.URL || 'mongodb://localhost/auth',
-    port: process.env.PORT || 8082
-}
-
-export default runner(config, routers())
+const server = new Server(app, environment)
+server.start()
+    .then(startedServer => logger.info('Server started %s', startedServer))
+    .catch(err => logger.error('Error on starting server %s', err))

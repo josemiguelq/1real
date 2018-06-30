@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken'
+import environment from '../../common/environment.mjs'
 
-const secret = 'faciles-sucesso-2018'
+const secret = 'CODATE_SECRET'
 const algorithm = 'HS256'
-const expiresInSeconds = 5 * 60 * 60
 
 export default class Token {
     static create(userData) {
@@ -13,7 +13,7 @@ export default class Token {
         }
         return jwt.sign(payload, secret, {
             algorithm: algorithm,
-            expiresIn: expiresInSeconds
+            expiresIn: environment.jwt.expiresInSeconds
         })
     }
 }

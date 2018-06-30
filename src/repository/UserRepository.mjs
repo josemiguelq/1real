@@ -1,4 +1,4 @@
-import {User} from '../model/User.mjs'
+import {User} from './User.mjs'
 
 class UserRepository {
     async save(userData) {
