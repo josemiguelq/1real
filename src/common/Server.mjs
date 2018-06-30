@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import logger from './logger.mjs'
 
 export default class Server {
     constructor(app, environment) {
@@ -9,7 +10,7 @@ export default class Server {
     async start() {
         this.registerGlobalEvents()
         await this.connectDb()
-        return await this.startApp()
+        return this.startApp()
     }
 
     registerGlobalEvents() {
@@ -17,6 +18,7 @@ export default class Server {
             throw reason
         })
         process.on('uncaughtException', (error) => {
+            logger.error('Error not handled %s', error)
             process.exit(1)
         })
     }

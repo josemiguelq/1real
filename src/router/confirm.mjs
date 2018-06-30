@@ -1,5 +1,5 @@
 import express from 'express'
-import Responder from '../common/'
+import Responder from '../common/Responder.mjs'
 import ConfirmEmail from '../business/usecase/ConfirmEmail.mjs'
 
 const router = express.Router()
