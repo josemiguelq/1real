@@ -10,10 +10,19 @@ export default class Login {
             if (!passwordIsCorrect) {
                 throw new Error('Wrong password')
             }
-            const token = Token.create(userData)
+            const payload = this.createTokenPayload(matchedUser)
+            const token = Token.create(payload)
             responder.success({token})
         } catch (err) {
             responder.unauthorized()
+        }
+    }
+
+    createTokenPayload(userData) {
+        return {
+            id: userData._id,
+            email: userData.email,
+            timestamp: new Date()
         }
     }
 }

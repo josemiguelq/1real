@@ -1,6 +1,6 @@
 import logger from './logger.mjs'
 
-export default (err, req, res) => {
+export default (req, res, next, err) => {
     let status = 500
     const payload = {message: err.message}
     switch (err.name) {
@@ -13,6 +13,6 @@ export default (err, req, res) => {
         status = 400
         break
     }
-    logger.error('Error', err)
-    return res.json(payload, status)
+    logger.error(err)
+    return res.status(status).json(payload)
 }
