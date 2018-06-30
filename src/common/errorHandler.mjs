@@ -1,3 +1,5 @@
+import logger from './logger.mjs'
+
 export default (err, req, res) => {
     let status = 500
     const payload = {message: err.message}
@@ -11,5 +13,6 @@ export default (err, req, res) => {
         status = 400
         break
     }
-    return res.sendStatus(status, payload)
+    logger.error('Error', err)
+    return res.json(payload, status)
 }

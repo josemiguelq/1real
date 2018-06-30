@@ -1,11 +1,16 @@
+import Token from 'src/business/entity/Token.mjs'
+import Encryption from 'src/business/entity/Encryption.mjs'
 import userRepository from 'src/repository/UserRepository'
 
 export default class ConfirmEmail {
-    async execute(userData, responder) {
+    async execute(params, responder) {
         try {
+            const userData = Token.verify(params.token)
             await this.checkUserExist(userData)
-            await userRepository.save(userData)
-            responder.success()
+            const cryptoPassword = await Encryption.hash(userData.password)
+            const userDataToSave = {email: userData.email, password: cryptoPassword}
+            const savedUser = await userRepository.save(userDataToSave)
+            responder.success(savedUser)
         } catch (err) {
             responder.error(err)
         }
