@@ -16,4 +16,8 @@ export default class Token {
             expiresIn: environment.jwt.expiresInSeconds
         })
     }
+
+    static verify(token) {
+        return jwt.verify(token, secret, {algorithm: algorithm})
+    }
 }

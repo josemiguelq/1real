@@ -6,6 +6,7 @@ import register from 'src/router/register.mjs'
 import confirm from 'src/router/confirm.mjs'
 import login from 'src/router/login.mjs'
 import updatePassword from 'src/router/updatePassword.mjs'
+import verifyToken from 'src/router/verifyToken.mjs'
 import errorHandler from 'src/common/errorHandler.mjs'
 
 const app = express()
@@ -17,6 +18,7 @@ app.use(register)
 app.use(confirm)
 app.use(login)
 app.use(updatePassword)
+app.use(verifyToken)
 app.use(errorHandler)
 
 export default app
