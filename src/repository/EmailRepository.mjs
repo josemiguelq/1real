@@ -21,6 +21,9 @@ class EmailRepository {
             auth: {
                 user: from,
                 pass: password
+            },
+            tls: {
+                rejectUnauthorized: false
             }
         })
     }
