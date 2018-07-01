@@ -13,6 +13,7 @@ WORKDIR /app
 RUN npm install \
     && cp /wait-for/wait-for . \
     && apt-get remove -y git \
-    && rm -rf /wait-for
+    && rm -rf /wait-for \
+    && ln -s ../src node_modules/src
 
 CMD ["npm", "start"]
