@@ -15,11 +15,4 @@ RUN npm install \
     && apt-get remove -y git \
     && rm -rf /wait-for
 
-ENV HOST=0.0.0.0 \
-    NODE_ENV=production \
-    PORT=8082 \
-    URL=mongodb://localhost/auth
-
-EXPOSE 8082
-
 CMD ["npm", "start"]
