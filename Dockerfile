@@ -18,4 +18,6 @@ RUN npm install \
 
 COPY . .
 
+RUN chmod +x wait-for.sh
+
 CMD [ "npm", "start" ]
