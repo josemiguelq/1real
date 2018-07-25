@@ -36,7 +36,7 @@ npm test
 
 ## How to use
 
-**See HelloWorld**
+**HelloWorld**
     Save HelloWorld on database
 
 * **URL**
