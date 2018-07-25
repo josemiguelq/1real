@@ -12,11 +12,17 @@ by: Charles Viegas
 Edited By: Vitor Jucá
 https://github.com/vitorjuca
 
+## Requirements
+
+```bash
+    node 9.0.0
+```
+
 ## How to install
 
 ```bash
 git clone https://github.com/agrointeli/microservice-demo.git
-
+npm install
 ```
 
 ## How to start
