@@ -1,4 +1,5 @@
 import packageJson from '../../package.json'
+import defaultEnvironmentConfig from '../../config/default_environment_config.json'
 
 export default {
     app: {
@@ -12,15 +13,15 @@ export default {
     },
 
     email: {
-        from: process.env.EMAIL_USER || 'noreplyfaciles@gmail.com',
-        password: process.env.EMAIL_PASSWORD || 'faciles@123'
+        from: process.env.EMAIL_USER || defaultEnvironmentConfig.email.default_from,
+        password: process.env.EMAIL_PASSWORD || defaultEnvironmentConfig.email.default_password
     },
 
     db: {
-        url: process.env.DB_URL || 'mongodb://localhost/lot'
+        url: process.env.DB_URL || defaultEnvironmentConfig.db.default_url
     },
 
     server: {
-        port: process.env.PORT || 8082
+        port: process.env.PORT || defaultEnvironmentConfig.server.default_port
     }
 }
