@@ -1,12 +1,21 @@
-# @codate/auth
+# @agrointeli/microservice-demo
+
+HelloWorld Template
 
 This API is part of a generic microservice architecture proposal. 
 Its goal is to define a skeleton for building scalable software.
 
+Credits for @codate
+https://github.com/codate
+by: Charles Viegas
+
+Edited By: Vitor Jucá
+https://github.com/vitorjuca
+
 ## How to install
 
 ```bash
-npm i @codate/auth -S
+npm i @agrointeli/microservice-demo -S
 
 ```
 
@@ -14,33 +23,26 @@ npm i @codate/auth -S
 
 ```bash
 PORT=8081
-URL=mongodb://localhost/auth
+URL=mongodb://localhost/database
 npm run start 
 
 ```
 
 ## How to use
 
-**Register new User**
-    Register new user in microservice for allow future login.
+**See HelloWorld**
+    Save HelloWorld on database
 
 * **URL**
-    POST /api/auth/register
+    POST /
 
 * **Data Params**
     
     ```json
     { 
-        "email" : "fulano@eail.com" 
+        "hello_world" : "Olá mundo" 
     }
     ``` 
-    OR
-    ```json
-    { 
-        "email" : "fulano@eail.com",
-        "password": "pass123"
-    }
-    ```
 
 * **Success Response:**
     * **Code:** 200 <br />
@@ -49,45 +51,6 @@ npm run start
         ```json
         { 
             "_id": "13423141234898ASDFAS",
-            "email" : "fulano@eail.com"
+            "hello_world" : "Olá Mundo"
         }
         ```
-
-----
-
-**Loginr**
-    Authenticaion user`s credentials.
-
-* **URL**
-    POST /api/auth/login
-
-* **Data Params**
-    ```json
-    { 
-        "email" : "fulano@eail.com",
-        "password": "pass123"
-    }
-    ```
-
-* **Success Response:**
-    * **Code:** 200 <br />
-    **Content:**
-    
-        ```json
-        { 
-            "_id": "13423141234898ASDFAS",
-            "email" : "fulano@eail.com"
-        }
-        ```
-
-
- 
-* **Error Response:**
-
-  * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "User doesn't exist" }`
-
-  OR
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "You are unauthorized to make this request." }`
