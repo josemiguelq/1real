@@ -11,7 +11,7 @@ class HelloWorldRepository {
     }
 
     async delete(payload){
-        return HelloWorld.delete(payload)
+        return HelloWorld.remove(payload)
     }
 }
 

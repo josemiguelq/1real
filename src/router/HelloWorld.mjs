@@ -1,12 +1,12 @@
 import express from 'express'
-import Responder from 'src/common/Responder.mjs'
-import SaveHelloWorld from 'src/business/usecase/SaveHelloWorld.mjs'
+import Responder from '../common/Responder.mjs'
+import SaveHelloWorld from '../business/usecase/SaveHelloWorld.mjs'
 
 const router = express.Router()
-router.post('/', (req, res, next) => {
+router.post('/helloworld', (req, res, next) => {
     const responder = new Responder(req, res, next)
     const saveHelloWorld = new SaveHelloWorld()
-    saveHelloWorld.execute(req.params, responder)
+    saveHelloWorld.execute(req.body, responder)
 })
 
 export default router

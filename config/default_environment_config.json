@@ -7,6 +7,6 @@
         "default_url": "mongodb://localhost/database"
     },
     "server": {
-        "dafault_port": 8082
+        "default_port": 8082
     }
 }

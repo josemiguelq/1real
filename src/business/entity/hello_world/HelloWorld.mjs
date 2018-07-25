@@ -1,9 +1,11 @@
 import mongoose from 'mongoose'
 
 const Schema = new mongoose.Schema({
-    hello_world: {type: String, required: true, unique: true},
+    hello_world: {type: String},
     createdAt: {type: Date, default: Date.now},
     updatedAt: {type: Date, default: Date.now}
 })
 
-export const User = mongoose.model('HelloWorld', Schema)
+let HelloWorld = mongoose.model('HelloWorld', Schema)
+
+export default HelloWorld

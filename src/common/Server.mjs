@@ -32,6 +32,7 @@ export default class Server {
             poolSize: 3,
             bufferMaxEntries: 0
         }
+        logger.info(`DB URL: ${this.environment.db.url}`)
         return mongoose.connect(this.environment.db.url, options)
     }
 

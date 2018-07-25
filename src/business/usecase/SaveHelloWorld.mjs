@@ -1,20 +1,21 @@
-import helloWorldRepository from '../entity/hello_world/HelloWorldRepository'
+import helloWorldRepository from '../entity/hello_world/HelloWorldRepository.mjs'
 
 export default class SaveHelloWorld {
     async execute(incomePayload, responder) {
         try {
-            if(!this.isValidPayload(payload))
+            if(!this.isValidPayload(incomePayload))
                 throw new Error('Invalid Payload')
-
-            const savedHelloWorld = helloWorldRepository.save()
+            
+            const savedHelloWorld = helloWorldRepository.save(incomePayload)
             responder.success({savedHelloWorld})
 
         } catch (err) {
-            responder.unauthorized()
+            responder.error(err)
         }
     }
 
     isValidPayload(payload){
-        return typeof(payload) != 'undefined'
+        return typeof(payload) != 'undefined' &&
+                typeof(payload.hello_world) != 'undefined'
     }
 }
