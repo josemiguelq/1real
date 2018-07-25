@@ -15,7 +15,7 @@ https://github.com/vitorjuca
 ## How to install
 
 ```bash
-npm i @agrointeli/microservice-demo -S
+git clone https://github.com/agrointeli/microservice-demo.git
 
 ```
 
@@ -24,7 +24,13 @@ npm i @agrointeli/microservice-demo -S
 ```bash
 PORT=8081
 URL=mongodb://localhost/database
-npm run start 
+npm start 
+
+```
+## How to test
+
+```bash
+npm test
 
 ```
 
