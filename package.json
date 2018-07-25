@@ -10,8 +10,6 @@
     "test": "mocha --compilers js:babel-core/register test/* --exit",
     "posttest": "mongodb-runner stop",
     "quality": "eslint ./src/**/*.mjs",
-    "build-image": "docker build -t agrointeli/microservice-demo:latest .",
-    "publish-image": "docker push agrointeli/microservice-demo",
     "postinstall": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'dir')});\""
   },
   "repository": {
