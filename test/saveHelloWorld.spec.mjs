@@ -9,10 +9,12 @@ import HelloWorldRepository from '../src/business/entity/hello_world/HelloWorldR
 
 describe('Save HelloWorld', () => {
     before((done) => {
+        
         const server = new Server(app, environment)
         server.start()
             .then(() => {
                 logger.info('Server started')
+                HelloWorldRepository.delete({})
                 done()
             })
             .catch(err => logger.error('Error on starting server %s', err))

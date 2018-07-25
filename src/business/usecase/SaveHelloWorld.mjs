@@ -6,7 +6,7 @@ export default class SaveHelloWorld {
             if(!this.isValidPayload(incomePayload))
                 throw new Error('Invalid Payload')
             
-            const savedHelloWorld = helloWorldRepository.save(incomePayload)
+            const savedHelloWorld =  await helloWorldRepository.save(incomePayload)
             responder.success({savedHelloWorld})
 
         } catch (err) {
