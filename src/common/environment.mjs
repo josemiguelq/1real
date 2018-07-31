@@ -2,6 +2,9 @@ import packageJson from '../../package.json'
 import defaultEnvironmentConfig from '../../config/default_environment_config.json'
 
 export default {
+
+    ENV_NAME : process.env.ENV_NAME || 'development',
+
     app: {
         name: packageJson.name,
         version: packageJson.version,
@@ -17,8 +20,18 @@ export default {
         password: process.env.EMAIL_PASSWORD || defaultEnvironmentConfig.email.default_password
     },
 
+    dev: {
+        DB_NAME: 'database',
+        DB_HOSTNAME: 'localhost',
+        DB_PORT: 27017
+    },
+
     db: {
-        url: process.env.DB_URL || defaultEnvironmentConfig.db.default_url
+        USERNAME: process.env.DB_USERNAME,
+        PASSWORD: process.env.DB_PASSWORD,
+        HOSTNAME: process.env.DB_HOST,
+        PORT: process.env.DB_PORT,
+        NAME: process.env.DB_NAME
     },
 
     server: {
