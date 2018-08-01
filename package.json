@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node -r esm main.mjs | bunyan -o short",
     "pretest": "mongodb-runner start",
-    "test": "mocha --compilers js:babel-core/register test/* --exit",
+    "test": "NODE_ENV=test mocha --reporter=list --require babel-core/register test/* --exit",
     "posttest": "mongodb-runner stop",
     "quality": "eslint ./src/**/*.mjs",
     "postinstall": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'dir')});\""
