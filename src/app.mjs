@@ -17,7 +17,7 @@ app.set('view engine', 'twig');
 app.use(express.static(path.join(path.resolve('./src'), 'public')));
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
-app.use(helmet())
+app.use(helmet({frameguard:false}))
 app.use(cors())
 app.use(RouteLogger)
 
