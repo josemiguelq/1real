@@ -5,7 +5,7 @@ var pagar = require('../src/business/pagar')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  // res.render('index', { title: 'Express' });
   res.redirect('/pagar');
 });
 
