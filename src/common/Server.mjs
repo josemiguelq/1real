@@ -65,12 +65,22 @@ export default class Server {
     }
 
     async connectDb() {
-        mongoose.Promise = global.Promise
-        return this.getDatabaseOptions()
-        .then((payload) => {
-            logger.info(`Database connected: ${JSON.stringify(payload)}`)
-            mongoose.connect(payload.url, payload.options)
-        })
+        try {
+            mongoose.Promise = global.Promise
+            return this.getDatabaseOptions()
+            .then((payload) => {
+                logger.info(`Database Infos: ${JSON.stringify(payload)}`)
+                mongoose.connect(payload.url, payload.options)
+                mongoose.connection.on("error", function(err) {
+                    console.log("Could not connect to mongo server!");
+                  });
+            }).catch((err) => {
+                logger.info(`Failed to connect`)
+            })
+        } catch (err) {
+            logger.info(`Failed to connect`)
+            return 0
+        }
     }
 
     async startApp() {
