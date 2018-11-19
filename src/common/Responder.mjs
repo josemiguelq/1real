@@ -16,4 +16,8 @@ export default class Responder {
     unauthorized() {
         this.res.sendStatus(401)
     }
+
+    render(view, options = null) {
+        this.res.render(view, options)
+    }
 }

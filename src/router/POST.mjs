@@ -10,4 +10,8 @@ router.post('/helloworlds', (req, res, next) => {
     saveHelloWorld.execute(req.body, responder)
 })
 
+router.post('/pay-notifications', (req, res, next) => {
+    console.log('olá marilene')
+})
+
 export default router
