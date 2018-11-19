@@ -17,6 +17,10 @@ router.get('/pagar', function(req, res, next) {
 router.post('/pay-notification', function(req, res, next) {
   console.log('alouses');
   res.sendStatus(200);
+
+
+
+
 });
 
 module.exports = router;
